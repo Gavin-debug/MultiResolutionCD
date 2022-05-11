@@ -1,0 +1,52 @@
+project:
+  value: 'Multi_conv'
+name:
+  desc: the name of this wandb run
+  value: 'LEVIR_Multi_conv_softmax_relu'
+dataset:
+  desc: to save the checkpoint
+  value: 'LEVIR'
+device:
+  desc: gpu_ids,
+  value: 3
+
+## dataset
+train_dir:
+  value: '/archive/hot0/wgd/LEVIR_mr/train'
+val_dir:
+  value: '/archive/hot0/wgd/LEVIR_mr/val'
+test_dir:
+  value: '/archive/hot0/wgd/LEVIR_mr/test'
+batch_size:
+  value: 4
+
+## train
+epochs:
+  desc: total training epochs
+  value: 100
+model:
+  desc: model implemented, should in 'Multi_conv', 'Lapsrn', 'BIT'
+  value: 'Multi_conv'
+optimizer:
+  desc: optimizer chosen, should in 'Adam', 'SGD', 'AdamW'
+  value: 'SGD'
+lr:
+  value: 0.01
+loss_fn:
+  desc: loss_function chosen, should in 'CrossEntropy'
+  value: 'CrossEntropy'
+
+## visulization
+train_metric_frequency:
+  value: 100
+
+val_visual_frequency:
+  value: 50
+
+test_visual_frequency:
+  value: 30
+
+## checkpoint
+checkpoint_dir:
+  value: './checkpoint/LEVIR/Multi_conv_softmax_relu'
+
