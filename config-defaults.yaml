@@ -1,10 +1,10 @@
 project:
-  value: 'Multi_conv'
+  value: 'BIT'
 name:
   desc: the name of this wandb run
-  value: 'LEVIR_Multi_conv_softmax_relu'
+  value: 'LEVIR_BIT_0'
 dataset:
-  desc: to save the checkpoint
+  desc: 'LEVIR:9809:1342:2869',
   value: 'LEVIR'
 device:
   desc: gpu_ids,
@@ -26,7 +26,7 @@ epochs:
   value: 100
 model:
   desc: model implemented, should in 'Multi_conv', 'Lapsrn', 'BIT'
-  value: 'Multi_conv'
+  value: 'BIT'
 optimizer:
   desc: optimizer chosen, should in 'Adam', 'SGD', 'AdamW'
   value: 'SGD'
@@ -48,5 +48,5 @@ test_visual_frequency:
 
 ## checkpoint
 checkpoint_dir:
-  value: './checkpoint/LEVIR/Multi_conv_softmax_relu'
+  value: './checkpoint/LEVIR/BIT_0'
 

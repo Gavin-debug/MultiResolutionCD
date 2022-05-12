@@ -185,7 +185,7 @@ class Trainer(object):
             self._collect_epoch_states('val')
             self._update_checkpoints()
 
-            wandb.log({'val_table': val_table})
+
 
 
 
@@ -199,6 +199,7 @@ if __name__ == '__main__':
     config = wandb.config
     Trainer = Trainer(config, val_table)
     Trainer.train()
+    wandb.log({'val_table': val_table})
     Evaluator = Evaluator(config, test_table)
     Evaluator.evaluate()
     wandb.log({'test_tabel': test_table})
