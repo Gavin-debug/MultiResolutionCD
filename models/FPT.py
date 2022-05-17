@@ -219,7 +219,7 @@ class FPT(nn.Module):
         return x
 
     def forward(self, x1, x2):
-        x1_64 = self.conv_1(x1)
+        x1_64 = self.conv_x1(x1)
         x1_128 = self.up_2(x1_64)
         x1_256 = self.up_2(x1_128)
         token_x1_64 = self.tokenizer(x1_64)

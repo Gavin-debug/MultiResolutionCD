@@ -147,7 +147,9 @@ class Trainer(object):
             self.logger.write('\n')
 
     def train(self) -> None:
-
+        self.logger.write(f"model:{self.config['model']}, optimizer:{self.config['optimizer']},"
+                          f"lr:{self.config['lr']}, loss_function:{self.config['loss_fn']},"
+                          f" epochs:{self.config['epochs']}")
         for self.epoch in range(1, self.config['epochs']+1):
             self.train_epoch_loss = 0.0
             self.val_epoch_loss = 0.0

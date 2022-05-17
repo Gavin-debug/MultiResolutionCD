@@ -1,8 +1,8 @@
 project:
-  value: 'BIT'
+  value: 'FPT'
 name:
   desc: the name of this wandb run
-  value: 'LEVIR_BIT_0'
+  value: 'LEVIR_FPT_0'
 dataset:
   desc: 'LEVIR:9809:1342:2869'
   value: 'LEVIR'
@@ -25,13 +25,13 @@ epochs:
   desc: total training epochs
   value: 100
 model:
-  desc: model implemented, should in 'Multi_conv', 'Lapsrn', 'BIT'
-  value: 'BIT'
+  desc: model implemented, should in 'Multi_conv', 'Lapsrn', 'BIT', 'FPT'
+  value: 'FPT'
 optimizer:
   desc: optimizer chosen, should in 'Adam', 'SGD', 'AdamW'
   value: 'SGD'
 lr:
-  value: 0.01
+  value: 0.005
 loss_fn:
   desc: loss_function chosen, should in 'CrossEntropy'
   value: 'CrossEntropy'
@@ -48,5 +48,5 @@ test_visual_frequency:
 
 ## checkpoint
 checkpoint_dir:
-  value: './checkpoint/LEVIR/BIT_0'
+  value: './checkpoint/LEVIR/FPT_0'
 
