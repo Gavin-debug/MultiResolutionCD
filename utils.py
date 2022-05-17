@@ -8,6 +8,7 @@ from datasets.dataset import CDDataset
 from torch.utils.data import DataLoader
 # from models.multi_conv import Multi_conv
 from models.BIT import define_G, BASE_Transformer
+from models.FPT import FPT
 from models.Lapsrn import Lapsrn
 from models.multi_conv import Multi_conv
 from losses.crossentropy import cross_entropy
@@ -35,6 +36,8 @@ def get_model(config: Dict) -> nn.Module:
     elif config['model'] == 'BIT':
         model = BASE_Transformer(input_nc=3, output_nc=2, token_len=4, resnet_stages_num=4,
                              with_pos='learned', enc_depth=1, dec_depth=8)
+    elif config['model'] == 'FPT':
+        model = FPT()
     else:
         raise NotImplementedError(f"{config['model']} is not implemented")
 

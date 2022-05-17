@@ -186,6 +186,7 @@ class TransformerDecoder(nn.Module):
 class FPT(nn.Module):
     def __init__(self):
         super(FPT,self).__init__()
+
         self.conv_x1 = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=(3,3), padding=1, stride=1)
         self.conv_x2 = nn.Conv2d(in_channels=3, out_channels=32, kernel_size=(3,3), padding=1, stride=1)
         self.conv_x2_128 = nn.Conv2d(in_channels=32, out_channels=32, kernel_size=(3,3), padding=1, stride=2)
@@ -204,7 +205,7 @@ class FPT(nn.Module):
     def tokenizer(self, x):
         b, c, h, w = x.shape
         spatial_attention = self.conv_a(x)
-        spatial_attention = spatial_attention.view([b, self.token_len, -1]).contiguous()
+        spatial_attention = spatial_attention.view([b, 4, -1]).contiguous()
         spatial_attention = torch.softmax(spatial_attention, dim=-1)
         x = x.view([b, c, -1]).contiguous()
         tokens = torch.einsum('bln,bcn->blc', spatial_attention, x)
