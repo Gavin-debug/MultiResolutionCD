@@ -4,7 +4,7 @@ name:
   desc: the name of this wandb run
   value: 'LEVIR_BIT_0'
 dataset:
-  desc: 'LEVIR:9809:1342:2869',
+  desc: 'LEVIR:9809:1342:2869'
   value: 'LEVIR'
 device:
   desc: gpu_ids,
