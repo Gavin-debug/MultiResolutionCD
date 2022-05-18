@@ -9,6 +9,7 @@ from torch.utils.data import DataLoader
 # from models.multi_conv import Multi_conv
 from models.BIT import define_G, BASE_Transformer
 from models.FPT import FPT
+from models.FPT_6in1 import FPT_6in1
 from models.Lapsrn import Lapsrn
 from models.multi_conv import Multi_conv
 from losses.crossentropy import cross_entropy
@@ -38,6 +39,8 @@ def get_model(config: Dict) -> nn.Module:
                              with_pos='learned', enc_depth=1, dec_depth=8)
     elif config['model'] == 'FPT':
         model = FPT()
+    elif config['model'] == 'FPT_6in1':
+        model = FPT_6in1()
     else:
         raise NotImplementedError(f"{config['model']} is not implemented")
 
